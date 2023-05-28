@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_monvest/pages/signup.dart';
 import '../components/my_textfield.dart';
 import '../components/signin_button.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SignInScreen extends StatelessWidget {
   SignInScreen({super.key});
@@ -25,12 +26,11 @@ class SignInScreen extends StatelessWidget {
             // Sign In
             Padding(
               padding: const EdgeInsets.only(left: 23.0),
-              child: const Text(
+              child: Text(
                 'Sign In',
-                style: TextStyle(
-                  fontFamily: 'Alegreya Sans',
+                style: GoogleFonts.alegreyaSans(
                   fontSize: 40,
-                  fontWeight: FontWeight.w700,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
@@ -42,8 +42,8 @@ class SignInScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 23.0),
               child: Text(
                 'Email',
-                style: TextStyle(
-                  fontFamily: 'Sarala',
+                style: GoogleFonts.sarala(
+                  fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
               ),
@@ -65,8 +65,8 @@ class SignInScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 23.0),
               child: Text(
                 'Password',
-                style: TextStyle(
-                  fontFamily: 'Sarala',
+                style: GoogleFonts.sarala(
+                  fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
               ),
@@ -88,8 +88,8 @@ class SignInScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 23.0),
               child: Text(
                 'Forgot Password?',
-                style: TextStyle(
-                  fontFamily: 'Sarala',
+                style: GoogleFonts.sarala(
+                  fontWeight: FontWeight.bold,
                   fontSize: 14,
                   decoration: TextDecoration.underline,
                   color: Color(0xFF38369A),
@@ -114,10 +114,8 @@ class SignInScreen extends StatelessWidget {
               alignment: Alignment.center,
               child: Text(
                 "Don't have an account?",
-                style: TextStyle(
-                  fontFamily: 'Sarala',
+                style: GoogleFonts.sarala(
                   fontSize: 18,
-                  fontWeight: FontWeight.normal,
                 ),
               ),
             ),
@@ -135,8 +133,7 @@ class SignInScreen extends StatelessWidget {
                 },
                 child: Text(
                   'Sign Up',
-                  style: TextStyle(
-                    fontFamily: 'Sarala',
+                  style: GoogleFonts.sarala(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     decoration: TextDecoration.underline,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_monvest/pages/signin.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../components/my_textfield.dart';
 import '../components/signup_button.dart';
 
@@ -7,8 +8,11 @@ class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key});
 
   // text editing controllers
+  final nameController = TextEditingController();
   final emailController = TextEditingController();
+  final phoneController = TextEditingController();
   final passwordController = TextEditingController();
+  final confpasswordController = TextEditingController();
 
   // sign user in method
   void signUserUp() {}
@@ -25,12 +29,11 @@ class SignUpScreen extends StatelessWidget {
             // Sign Up
             Padding(
               padding: const EdgeInsets.only(left: 23.0),
-              child: const Text(
+              child: Text(
                 'Sign Up',
-                style: TextStyle(
-                  fontFamily: 'Alegreya Sans',
+                style: GoogleFonts.alegreyaSans(
                   fontSize: 40,
-                  fontWeight: FontWeight.w700,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
@@ -42,8 +45,8 @@ class SignUpScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 23.0),
               child: Text(
                 'Name',
-                style: TextStyle(
-                  fontFamily: 'Sarala',
+                style: GoogleFonts.sarala(
+                  fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
               ),
@@ -52,7 +55,7 @@ class SignUpScreen extends StatelessWidget {
             // Name textfield
             Container(
               child: MyTextField(
-                controller: emailController,
+                controller: nameController,
                 hintText: 'Input your name',
                 obscureText: false,
               ),
@@ -65,8 +68,8 @@ class SignUpScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 23.0),
               child: Text(
                 'Email',
-                style: TextStyle(
-                  fontFamily: 'Sarala',
+                style: GoogleFonts.sarala(
+                  fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
               ),
@@ -75,7 +78,7 @@ class SignUpScreen extends StatelessWidget {
             // Email textfield
             Container(
               child: MyTextField(
-                controller: passwordController,
+                controller: emailController,
                 hintText: 'Input your email',
                 obscureText: false,
               ),
@@ -87,9 +90,9 @@ class SignUpScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 23.0),
               child: Text(
-                'Email',
-                style: TextStyle(
-                  fontFamily: 'Sarala',
+                'Phone Number',
+                style: GoogleFonts.sarala(
+                  fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
               ),
@@ -98,7 +101,7 @@ class SignUpScreen extends StatelessWidget {
             // Phone Number textfield
             Container(
               child: MyTextField(
-                controller: passwordController,
+                controller: phoneController,
                 hintText: 'Input your phone number',
                 obscureText: false,
               ),
@@ -111,8 +114,8 @@ class SignUpScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 23.0),
               child: Text(
                 'Password',
-                style: TextStyle(
-                  fontFamily: 'Sarala',
+                style: GoogleFonts.sarala(
+                  fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
               ),
@@ -134,8 +137,8 @@ class SignUpScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 23.0),
               child: Text(
                 'Confirm Password',
-                style: TextStyle(
-                  fontFamily: 'Sarala',
+                style: GoogleFonts.sarala(
+                  fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
               ),
@@ -144,7 +147,7 @@ class SignUpScreen extends StatelessWidget {
             // Confirm Password textfield
             Container(
               child: MyTextField(
-                controller: passwordController,
+                controller: confpasswordController,
                 hintText: 'Confirm your password',
                 obscureText: true,
               ),
@@ -188,12 +191,11 @@ class SignUpScreen extends StatelessWidget {
                 },
                 child: Text(
                   'Sign In',
-                  style: TextStyle(
-                    fontFamily: 'Sarala',
+                  style: GoogleFonts.sarala(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     decoration: TextDecoration.underline,
-                    color: Color(0xFF58B09C),
+                    color: Color(0xFF38369A),
                   ),
                 ),
               ),

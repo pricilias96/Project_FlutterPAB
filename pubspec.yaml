@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.5
+  google_fonts: ^4.0.4
 
 dev_dependencies:
   flutter_test:
@@ -75,23 +76,7 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: Alegreya Sans
-      fonts:
-        - asset: assets/fonts/AlegreyaSans-Bold.ttf
-          weight : 700
-        - asset: assets/fonts/AlegreyaSans-ExtraBoldItalic.ttf
-          weight : 800
-          style : italic
-    - family: Hind Madurai
-      fonts:
-      - asset: assets/fonts/HindMadurai-Regular.ttf
-        weight : 400
-    - family: Sarala
-      fonts:
-        - asset: assets/fonts/Sarala-Bold.ttf
-          weight : 700
-
+  # fonts:
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

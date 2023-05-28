@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../pages/signin.dart';
 
 class SignUpButton extends StatelessWidget {
   final Function()? onTap;
@@ -8,7 +11,13 @@ class SignUpButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        // Navigate ke sign-in page
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => SignInScreen()),
+        );
+      },
       child: Container(
         padding: const EdgeInsets.all(5),
         margin: const EdgeInsets.symmetric(horizontal: 23),
@@ -16,11 +25,10 @@ class SignUpButton extends StatelessWidget {
           color: Color(0xFF58B09C),
           borderRadius: BorderRadius.circular(10),
         ),
-        child: const Center(
+        child: Center(
           child: Text(
             "Sign Up",
-            style: TextStyle(
-              fontFamily: 'Sarala',
+            style: GoogleFonts.sarala(
               color: Colors.white,
               fontWeight: FontWeight.bold,
               fontSize: 18,
