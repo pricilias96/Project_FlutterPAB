@@ -32,54 +32,95 @@ class _HomePageState extends State<HomePage> {
                 bottomRight: Radius.circular(20),
               ),
             ),
-            child: Padding(
-              padding: EdgeInsets.only(top: 23, left: 16, right: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  CircleAvatar(
-                    radius: 14,
-                    backgroundImage: AssetImage('assets/images/profile.png'),
-                  ),
-                  SizedBox(width: 9),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Welcome back,',
-                        style: GoogleFonts.roboto(fontSize: 12),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 45, right: 45, top: 74),
+            width: 271,
+            height: 21,
+            child: Stack(
+              children: [
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      "Overview",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
                       ),
-                      Text(
-                        'Anna Aurelia',
-                        style: GoogleFonts.roboto(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
+                    ),
+                  ),
+                ),
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: Text(
+                      "Budgeting",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left: 138,
+                  top: 0,
+                  child: Text(
+                    "Investment",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 12,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left: 63,
+                  top: 0,
+                  child: Text(
+                    "Transaction",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 12,
+                    ),
+                  ),
+                ),
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Container(
+                      width: 271,
+                      height: 2,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Color(0xff7ca5b7),
+                          width: 1,
                         ),
-                      )
-                    ],
+                      ),
+                      padding: const EdgeInsets.only(
+                        right: 219,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 52,
+                            height: 2,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Color(0xff38369a),
+                                width: 1,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                  SizedBox(width: 149),
-                  Row(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/icons/search-rounded.svg',
-                        width: 20,
-                        height: 20,
-                      ),
-                      SvgPicture.asset(
-                        'assets/icons/bell-notification.svg',
-                        width: 20,
-                        height: 20,
-                      ),
-                      SvgPicture.asset(
-                        'assets/icons/setting-filled.svg',
-                        width: 20,
-                        height: 20,
-                      ),
-                    ],
-                  )
-                ],
-              ),
+                ),
+              ],
             ),
           )
         ],

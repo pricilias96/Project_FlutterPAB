@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_monvest/pages/signin.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../components/my_textfield.dart';
+import '../components/mypass_textfield.dart';
 import '../components/signup_button.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -123,7 +124,7 @@ class SignUpScreen extends StatelessWidget {
 
             // Password textfield
             Container(
-              child: MyTextField(
+              child: MyPassTextField(
                 controller: passwordController,
                 hintText: 'Input your password',
                 obscureText: true,
@@ -146,7 +147,7 @@ class SignUpScreen extends StatelessWidget {
 
             // Confirm Password textfield
             Container(
-              child: MyTextField(
+              child: MyPassTextField(
                 controller: confpasswordController,
                 hintText: 'Confirm your password',
                 obscureText: true,

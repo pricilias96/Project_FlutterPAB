@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_monvest/pages/signup.dart';
 import '../components/my_textfield.dart';
+import '../components/mypass_textfield.dart';
 import '../components/signin_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -74,7 +75,7 @@ class SignInScreen extends StatelessWidget {
 
             // Password textfield
             Container(
-              child: MyTextField(
+              child: MyPassTextField(
                 controller: passwordController,
                 hintText: 'Input your password',
                 obscureText: true,
