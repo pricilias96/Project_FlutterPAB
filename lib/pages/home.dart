@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_monvest/pages/investment.dart';
+import 'package:flutter_monvest/pages/profile-page.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -10,9 +12,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _selectedItemIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: Row(
+        children: [
+          buildNavBarItem(Icons.home, 0),
+          buildNavBarItem(Icons.addchart_outlined, 1),
+          buildNavBarItem(Icons.add_circle, 2),
+          buildNavBarItem(Icons.forum_outlined, 3),
+          buildNavBarItem(Icons.account_circle_outlined, 4),
+        ],
+      ),
       body: Stack(
         children: [
           // background top bar
@@ -32,6 +44,69 @@ class _HomePageState extends State<HomePage> {
                 bottomLeft: Radius.circular(20),
                 bottomRight: Radius.circular(20),
               ),
+            ),
+          ),
+          // top bar
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 25),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // foto profile
+                Container(
+                  width: 35.0,
+                  height: 35.0,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    border: Border.all(
+                      width: 1.5,
+                      color: Color(0xFFC6EBBE),
+                    ),
+                    borderRadius: BorderRadius.circular(40.0),
+                  ),
+                  child: CircleAvatar(
+                      backgroundImage: AssetImage('assets/images/profile.png')),
+                ),
+                SizedBox(width: 9),
+                // welcome back, user name
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Welcome back,',
+                      style:
+                          GoogleFonts.roboto(fontSize: 12, color: Colors.black),
+                    ),
+                    Text(
+                      'Anna Aurelia',
+                      style: GoogleFonts.roboto(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                    )
+                  ],
+                ),
+                Spacer(),
+                // icons
+                Row(
+                  children: [
+                    Icon(
+                      Icons.search_rounded,
+                      size: 23,
+                    ),
+                    Icon(
+                      Icons.notifications_sharp,
+                      size: 23,
+                    ),
+                    Icon(
+                      Icons.settings_rounded,
+                      size: 23,
+                    ),
+                  ],
+                )
+              ],
             ),
           ),
           // menu
@@ -248,57 +323,91 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          // bottom bar
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              width: 360,
-              height: 65,
-              color: Color(0xff020887),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SvgPicture.asset(
-                    'assets/icons/home.svg',
-                    width: 33,
-                    height: 33,
-                    color: Colors.white,
-                  ),
-                  SizedBox(width: 40),
-                  SvgPicture.asset(
-                    'assets/icons/invest.svg',
-                    width: 29,
-                    height: 29,
-                    color: Colors.white,
-                  ),
-                  SizedBox(width: 40),
-                  SvgPicture.asset(
-                    'assets/icons/add.svg',
-                    width: 48,
-                    height: 48,
-                    color: Colors.white,
-                  ),
-                  SizedBox(width: 40),
-                  SvgPicture.asset(
-                    'assets/icons/forum.svg',
-                    width: 29,
-                    height: 29,
-                    color: Colors.white,
-                  ),
-                  SizedBox(width: 40),
-                  SvgPicture.asset(
-                    'assets/icons/profile.svg',
-                    width: 29,
-                    height: 29,
-                    color: Colors.white,
-                  ),
-                ],
-              ),
-            ),
-          ),
         ],
       ),
     );
+  }
+
+  GestureDetector buildNavBarItem(IconData icon, int index) {
+    if (index == 0) {
+      return GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HomePage()),
+          );
+        },
+        child: Container(
+          color: Color(0xff020887),
+          width: MediaQuery.of(context).size.width / 5,
+          height: 65,
+          child: Icon(
+            icon,
+            size: 30,
+            color:
+                index == _selectedItemIndex ? Color(0xFF58B09C) : Colors.white,
+          ),
+        ),
+      );
+    } else if (index == 1) {
+      return GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => InvestPage()),
+          );
+        },
+        child: Container(
+          color: Color(0xff020887),
+          width: MediaQuery.of(context).size.width / 5,
+          height: 65,
+          child: Icon(
+            icon,
+            size: 30,
+            color:
+                index == _selectedItemIndex ? Color(0xFF58B09C) : Colors.white,
+          ),
+        ),
+      );
+    } else if (index == 4) {
+      return GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ProfilePage()),
+          );
+        },
+        child: Container(
+          color: Color(0xff020887),
+          width: MediaQuery.of(context).size.width / 5,
+          height: 65,
+          child: Icon(
+            icon,
+            size: 30,
+            color:
+                index == _selectedItemIndex ? Color(0xFF58B09C) : Colors.white,
+          ),
+        ),
+      );
+    } else {
+      return GestureDetector(
+        onTap: () {
+          setState(() {
+            _selectedItemIndex = index;
+          });
+        },
+        child: Container(
+          color: Color(0xff020887),
+          width: MediaQuery.of(context).size.width / 5,
+          height: 65,
+          child: Icon(
+            icon,
+            size: 30,
+            color:
+                index == _selectedItemIndex ? Color(0xFF58B09C) : Colors.white,
+          ),
+        ),
+      );
+    }
   }
 }

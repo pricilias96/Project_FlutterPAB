@@ -13,10 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Monvest',
-      home: SplashScreen(),
-      theme: ThemeData(
-        primaryColor: Colors.greenAccent,
-      ),
+      home: SplashPage(),
     );
   }
 }
