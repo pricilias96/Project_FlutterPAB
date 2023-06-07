@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_monvest/pages/add-transaction.dart';
+import 'package:flutter_monvest/pages/forum.dart';
 import 'package:flutter_monvest/pages/investment.dart';
 import 'package:flutter_monvest/pages/profile-page.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -13,6 +15,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedItemIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -355,6 +358,46 @@ class _HomePageState extends State<HomePage> {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => InvestPage()),
+          );
+        },
+        child: Container(
+          color: Color(0xff020887),
+          width: MediaQuery.of(context).size.width / 5,
+          height: 65,
+          child: Icon(
+            icon,
+            size: 30,
+            color:
+                index == _selectedItemIndex ? Color(0xFF58B09C) : Colors.white,
+          ),
+        ),
+      );
+    } else if (index == 2) {
+      return GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddTransaction()),
+          );
+        },
+        child: Container(
+          color: Color(0xff020887),
+          width: MediaQuery.of(context).size.width / 5,
+          height: 65,
+          child: Icon(
+            icon,
+            size: 30,
+            color:
+                index == _selectedItemIndex ? Color(0xFF58B09C) : Colors.white,
+          ),
+        ),
+      );
+    } else if (index == 3) {
+      return GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ForumPage()),
           );
         },
         child: Container(
