@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_monvest/pages/add-transaction.dart';
+import 'package:flutter_monvest/pages/transaction.dart';
 import 'package:flutter_monvest/pages/forum.dart';
 import 'package:flutter_monvest/pages/home.dart';
 import 'package:flutter_monvest/pages/investment.dart';

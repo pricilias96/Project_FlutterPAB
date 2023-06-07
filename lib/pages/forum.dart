@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_monvest/pages/add-transaction.dart';
+import 'package:flutter_monvest/pages/transaction.dart';
 import 'package:flutter_monvest/pages/home.dart';
 import 'package:flutter_monvest/pages/investment.dart';
 import 'package:flutter_monvest/pages/profile-page.dart';
@@ -82,6 +82,582 @@ class _ForumPageState extends State<ForumPage> {
                 ),
               ],
             ),
+            // post
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // post 1
+                SizedBox(height: 10),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  alignment: Alignment.centerLeft,
+                  width: double.maxFinite,
+                  height: 110,
+                  margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 3,
+                        offset: Offset(0, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/images/profile.png'),
+                            radius: 13,
+                          ),
+                          SizedBox(width: 10),
+                          Row(
+                            children: [
+                              Text(
+                                'Username ',
+                                style: GoogleFonts.sarala(
+                                    fontSize: 12, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                '| Time Added',
+                                style: GoogleFonts.sarala(fontSize: 11),
+                              ),
+                            ],
+                          ),
+                          Spacer(),
+                          Icon(Icons.info_outline, size: 15)
+                        ],
+                      ),
+                      Spacer(),
+                      Text(
+                        'Description',
+                        style: GoogleFonts.hindMadurai(fontSize: 12),
+                        textAlign: TextAlign.left,
+                      ),
+                      Spacer(),
+                      Row(
+                        children: [
+                          Icon(Icons.favorite_border, size: 15),
+                          SizedBox(width: 5),
+                          Text('0',
+                              style: GoogleFonts.hindMadurai(fontSize: 10)),
+                          SizedBox(width: 15),
+                          Icon(Icons.mode_comment_outlined, size: 15),
+                          SizedBox(width: 5),
+                          Text('0',
+                              style: GoogleFonts.hindMadurai(fontSize: 10)),
+                          Spacer(),
+                          Icon(Icons.bookmark_border, size: 15)
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                // post 2
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  alignment: Alignment.centerLeft,
+                  width: double.maxFinite,
+                  height: 110,
+                  margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 3,
+                        offset: Offset(0, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/images/profile.png'),
+                            radius: 13,
+                          ),
+                          SizedBox(width: 10),
+                          Row(
+                            children: [
+                              Text(
+                                'Username ',
+                                style: GoogleFonts.sarala(
+                                    fontSize: 12, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                '| Time Added',
+                                style: GoogleFonts.sarala(fontSize: 11),
+                              ),
+                            ],
+                          ),
+                          Spacer(),
+                          Icon(Icons.info_outline, size: 15)
+                        ],
+                      ),
+                      Spacer(),
+                      Text(
+                        'Description',
+                        style: GoogleFonts.hindMadurai(fontSize: 12),
+                        textAlign: TextAlign.left,
+                      ),
+                      Spacer(),
+                      Row(
+                        children: [
+                          Icon(Icons.favorite_border, size: 15),
+                          SizedBox(width: 5),
+                          Text('0',
+                              style: GoogleFonts.hindMadurai(fontSize: 10)),
+                          SizedBox(width: 15),
+                          Icon(Icons.mode_comment_outlined, size: 15),
+                          SizedBox(width: 5),
+                          Text('0',
+                              style: GoogleFonts.hindMadurai(fontSize: 10)),
+                          Spacer(),
+                          Icon(Icons.bookmark_border, size: 15)
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                // post 3
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  alignment: Alignment.centerLeft,
+                  width: double.maxFinite,
+                  height: 110,
+                  margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 3,
+                        offset: Offset(0, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/images/profile.png'),
+                            radius: 13,
+                          ),
+                          SizedBox(width: 10),
+                          Row(
+                            children: [
+                              Text(
+                                'Username ',
+                                style: GoogleFonts.sarala(
+                                    fontSize: 12, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                '| Time Added',
+                                style: GoogleFonts.sarala(fontSize: 11),
+                              ),
+                            ],
+                          ),
+                          Spacer(),
+                          Icon(Icons.info_outline, size: 15)
+                        ],
+                      ),
+                      Spacer(),
+                      Text(
+                        'Description',
+                        style: GoogleFonts.hindMadurai(fontSize: 12),
+                        textAlign: TextAlign.left,
+                      ),
+                      Spacer(),
+                      Row(
+                        children: [
+                          Icon(Icons.favorite_border, size: 15),
+                          SizedBox(width: 5),
+                          Text('0',
+                              style: GoogleFonts.hindMadurai(fontSize: 10)),
+                          SizedBox(width: 15),
+                          Icon(Icons.mode_comment_outlined, size: 15),
+                          SizedBox(width: 5),
+                          Text('0',
+                              style: GoogleFonts.hindMadurai(fontSize: 10)),
+                          Spacer(),
+                          Icon(Icons.bookmark_border, size: 15)
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                // post 4
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  alignment: Alignment.centerLeft,
+                  width: double.maxFinite,
+                  height: 110,
+                  margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 3,
+                        offset: Offset(0, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/images/profile.png'),
+                            radius: 13,
+                          ),
+                          SizedBox(width: 10),
+                          Row(
+                            children: [
+                              Text(
+                                'Username ',
+                                style: GoogleFonts.sarala(
+                                    fontSize: 12, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                '| Time Added',
+                                style: GoogleFonts.sarala(fontSize: 11),
+                              ),
+                            ],
+                          ),
+                          Spacer(),
+                          Icon(Icons.info_outline, size: 15)
+                        ],
+                      ),
+                      Spacer(),
+                      Text(
+                        'Description',
+                        style: GoogleFonts.hindMadurai(fontSize: 12),
+                        textAlign: TextAlign.left,
+                      ),
+                      Spacer(),
+                      Row(
+                        children: [
+                          Icon(Icons.favorite_border, size: 15),
+                          SizedBox(width: 5),
+                          Text('0',
+                              style: GoogleFonts.hindMadurai(fontSize: 10)),
+                          SizedBox(width: 15),
+                          Icon(Icons.mode_comment_outlined, size: 15),
+                          SizedBox(width: 5),
+                          Text('0',
+                              style: GoogleFonts.hindMadurai(fontSize: 10)),
+                          Spacer(),
+                          Icon(Icons.bookmark_border, size: 15)
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                // post 5
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  alignment: Alignment.centerLeft,
+                  width: double.maxFinite,
+                  height: 110,
+                  margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 3,
+                        offset: Offset(0, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/images/profile.png'),
+                            radius: 13,
+                          ),
+                          SizedBox(width: 10),
+                          Row(
+                            children: [
+                              Text(
+                                'Username ',
+                                style: GoogleFonts.sarala(
+                                    fontSize: 12, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                '| Time Added',
+                                style: GoogleFonts.sarala(fontSize: 11),
+                              ),
+                            ],
+                          ),
+                          Spacer(),
+                          Icon(Icons.info_outline, size: 15)
+                        ],
+                      ),
+                      Spacer(),
+                      Text(
+                        'Description',
+                        style: GoogleFonts.hindMadurai(fontSize: 12),
+                        textAlign: TextAlign.left,
+                      ),
+                      Spacer(),
+                      Row(
+                        children: [
+                          Icon(Icons.favorite_border, size: 15),
+                          SizedBox(width: 5),
+                          Text('0',
+                              style: GoogleFonts.hindMadurai(fontSize: 10)),
+                          SizedBox(width: 15),
+                          Icon(Icons.mode_comment_outlined, size: 15),
+                          SizedBox(width: 5),
+                          Text('0',
+                              style: GoogleFonts.hindMadurai(fontSize: 10)),
+                          Spacer(),
+                          Icon(Icons.bookmark_border, size: 15)
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                // post 6
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  alignment: Alignment.centerLeft,
+                  width: double.maxFinite,
+                  height: 110,
+                  margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 3,
+                        offset: Offset(0, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/images/profile.png'),
+                            radius: 13,
+                          ),
+                          SizedBox(width: 10),
+                          Row(
+                            children: [
+                              Text(
+                                'Username ',
+                                style: GoogleFonts.sarala(
+                                    fontSize: 12, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                '| Time Added',
+                                style: GoogleFonts.sarala(fontSize: 11),
+                              ),
+                            ],
+                          ),
+                          Spacer(),
+                          Icon(Icons.info_outline, size: 15)
+                        ],
+                      ),
+                      Spacer(),
+                      Text(
+                        'Description',
+                        style: GoogleFonts.hindMadurai(fontSize: 12),
+                        textAlign: TextAlign.left,
+                      ),
+                      Spacer(),
+                      Row(
+                        children: [
+                          Icon(Icons.favorite_border, size: 15),
+                          SizedBox(width: 5),
+                          Text('0',
+                              style: GoogleFonts.hindMadurai(fontSize: 10)),
+                          SizedBox(width: 15),
+                          Icon(Icons.mode_comment_outlined, size: 15),
+                          SizedBox(width: 5),
+                          Text('0',
+                              style: GoogleFonts.hindMadurai(fontSize: 10)),
+                          Spacer(),
+                          Icon(Icons.bookmark_border, size: 15)
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                // post 7
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  alignment: Alignment.centerLeft,
+                  width: double.maxFinite,
+                  height: 110,
+                  margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 3,
+                        offset: Offset(0, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/images/profile.png'),
+                            radius: 13,
+                          ),
+                          SizedBox(width: 10),
+                          Row(
+                            children: [
+                              Text(
+                                'Username ',
+                                style: GoogleFonts.sarala(
+                                    fontSize: 12, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                '| Time Added',
+                                style: GoogleFonts.sarala(fontSize: 11),
+                              ),
+                            ],
+                          ),
+                          Spacer(),
+                          Icon(Icons.info_outline, size: 15)
+                        ],
+                      ),
+                      Spacer(),
+                      Text(
+                        'Description',
+                        style: GoogleFonts.hindMadurai(fontSize: 12),
+                        textAlign: TextAlign.left,
+                      ),
+                      Spacer(),
+                      Row(
+                        children: [
+                          Icon(Icons.favorite_border, size: 15),
+                          SizedBox(width: 5),
+                          Text('0',
+                              style: GoogleFonts.hindMadurai(fontSize: 10)),
+                          SizedBox(width: 15),
+                          Icon(Icons.mode_comment_outlined, size: 15),
+                          SizedBox(width: 5),
+                          Text('0',
+                              style: GoogleFonts.hindMadurai(fontSize: 10)),
+                          Spacer(),
+                          Icon(Icons.bookmark_border, size: 15)
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                // post 8
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  alignment: Alignment.centerLeft,
+                  width: double.maxFinite,
+                  height: 110,
+                  margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 3,
+                        offset: Offset(0, 1),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/images/profile.png'),
+                            radius: 13,
+                          ),
+                          SizedBox(width: 10),
+                          Row(
+                            children: [
+                              Text(
+                                'Username ',
+                                style: GoogleFonts.sarala(
+                                    fontSize: 12, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                '| Time Added',
+                                style: GoogleFonts.sarala(fontSize: 11),
+                              ),
+                            ],
+                          ),
+                          Spacer(),
+                          Icon(Icons.info_outline, size: 15)
+                        ],
+                      ),
+                      Spacer(),
+                      Text(
+                        'Description',
+                        style: GoogleFonts.hindMadurai(fontSize: 12),
+                        textAlign: TextAlign.left,
+                      ),
+                      Spacer(),
+                      Row(
+                        children: [
+                          Icon(Icons.favorite_border, size: 15),
+                          SizedBox(width: 5),
+                          Text('0',
+                              style: GoogleFonts.hindMadurai(fontSize: 10)),
+                          SizedBox(width: 15),
+                          Icon(Icons.mode_comment_outlined, size: 15),
+                          SizedBox(width: 5),
+                          Text('0',
+                              style: GoogleFonts.hindMadurai(fontSize: 10)),
+                          Spacer(),
+                          Icon(Icons.bookmark_border, size: 15)
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),

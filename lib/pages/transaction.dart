@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_monvest/pages/add-categories.dart';
+import 'package:flutter_monvest/pages/add-income.dart';
 import 'package:flutter_monvest/pages/forum.dart';
 import 'package:flutter_monvest/pages/home.dart';
 import 'package:flutter_monvest/pages/investment.dart';
@@ -91,33 +93,42 @@ class _AddTransactionState extends State<AddTransaction> {
                 crossAxisSpacing: 10,
                 crossAxisCount: 3,
                 children: [
-                  Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            Container(
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color(0xffcaf7e2),
+                  GestureDetector(
+                    onTap: () {
+                      // Navigasi ke halaman Income
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Income()),
+                      );
+                    },
+                    child: Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Color(0xffcaf7e2),
+                                ),
                               ),
-                            ),
-                            SvgPicture.asset('assets/icons/cash-plus.svg',
-                                color: Color(0xff020887)),
-                          ],
-                        ),
-                        SizedBox(height: 1),
-                        Text(
-                          'Deposit',
-                          style: GoogleFonts.sarala(
-                              fontWeight: FontWeight.w400, fontSize: 12),
-                        )
-                      ],
+                              SvgPicture.asset('assets/icons/cash-plus.svg',
+                                  color: Color(0xff020887)),
+                            ],
+                          ),
+                          SizedBox(height: 1),
+                          Text(
+                            'Deposit',
+                            style: GoogleFonts.sarala(
+                                fontWeight: FontWeight.w400, fontSize: 12),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Container(
@@ -178,34 +189,43 @@ class _AddTransactionState extends State<AddTransaction> {
                       ],
                     ),
                   ),
-                  Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            Container(
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color(0xffcaf7e2),
+                  GestureDetector(
+                    onTap: () {
+                      // Navigasi ke halaman Categories
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Categories()),
+                      );
+                    },
+                    child: Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Color(0xffcaf7e2),
+                                ),
                               ),
-                            ),
-                            SvgPicture.asset('assets/icons/categories.svg',
-                                color: Color(0xff020887)),
-                          ],
-                        ),
-                        SizedBox(height: 1),
-                        Text(
-                          'Create\nCategories',
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.sarala(
-                              fontWeight: FontWeight.w400, fontSize: 12),
-                        )
-                      ],
+                              SvgPicture.asset('assets/icons/categories.svg',
+                                  color: Color(0xff020887)),
+                            ],
+                          ),
+                          SizedBox(height: 1),
+                          Text(
+                            'Create\nCategories',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.sarala(
+                                fontWeight: FontWeight.w400, fontSize: 12),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Container(
