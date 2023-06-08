@@ -3,14 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
 
-class Income extends StatefulWidget {
-  const Income({Key? key});
+class Expense extends StatefulWidget {
+  const Expense({Key? key});
 
   @override
-  State<Income> createState() => _IncomeState();
+  State<Expense> createState() => _ExpenseState();
 }
 
-class _IncomeState extends State<Income> {
+class _ExpenseState extends State<Expense> {
   TextEditingController _titleController = TextEditingController();
   TextEditingController _amountController = TextEditingController();
   TextEditingController _descriptionController = TextEditingController();
@@ -56,10 +56,10 @@ class _IncomeState extends State<Income> {
               alignment: Alignment.centerRight,
               child: Row(
                 children: [
-                  Icon(Icons.file_download, size: 15),
+                  Icon(Icons.file_upload, size: 15),
                   SizedBox(width: 5),
                   Text(
-                    'Income',
+                    'Expense',
                     style: GoogleFonts.alegreyaSans(
                         fontSize: 20, fontWeight: FontWeight.w700),
                   ),
@@ -71,13 +71,13 @@ class _IncomeState extends State<Income> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // income title
+            // expense title
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: TextField(
                 controller: _titleController,
                 decoration: InputDecoration(
-                  hintText: 'Income Title',
+                  hintText: 'Expense Title',
                   hintStyle: GoogleFonts.alegreyaSans(
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
@@ -249,7 +249,7 @@ class _IncomeState extends State<Income> {
                         // Tampilkan snackbar notifikasi
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            content: Text('Income added!'),
+                            content: Text('Expense added!'),
                             duration: Duration(seconds: 2),
                           ),
                         );
@@ -257,7 +257,7 @@ class _IncomeState extends State<Income> {
                       style: ElevatedButton.styleFrom(
                         primary: Color(0xFF58B09C),
                       ),
-                      child: Text('Add Income'),
+                      child: Text('Add Expense'),
                     ),
                   ),
                 ],

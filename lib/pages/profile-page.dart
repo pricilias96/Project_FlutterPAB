@@ -89,7 +89,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           fontSize: 14, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      '10',
+                      '0',
                       style: GoogleFonts.sarala(
                           fontSize: 14, fontWeight: FontWeight.bold),
                     ),
@@ -104,7 +104,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           fontSize: 14, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      '14',
+                      '0',
                       style: GoogleFonts.sarala(
                           fontSize: 14, fontWeight: FontWeight.bold),
                     ),

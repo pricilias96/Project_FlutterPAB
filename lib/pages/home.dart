@@ -236,7 +236,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     SizedBox(width: 8),
                     Text(
-                      "12,345,678.35",
+                      "0",
                       style: GoogleFonts.roboto(
                         color: Colors.black,
                         fontSize: 24,

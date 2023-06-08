@@ -1,33 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Categories extends StatefulWidget {
-  const Categories({Key? key});
+class PlannedPayments extends StatefulWidget {
+  const PlannedPayments({Key? key});
 
   @override
-  State<Categories> createState() => _CategoriesState();
+  State<PlannedPayments> createState() => _PlannedPaymentsState();
 }
 
-class _CategoriesState extends State<Categories> {
-  List<Category> categories = [];
+class _PlannedPaymentsState extends State<PlannedPayments> {
+  List<Planned> plans = [];
 
-  void addCategory(BuildContext context) {
-    String newCategoryName = '';
+  void addPlanned(BuildContext context) {
+    String newPlannedName = '';
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Add Category'),
+          title: Text('Add Payments'),
           content: TextField(
             onChanged: (value) {
-              newCategoryName = value;
+              newPlannedName = value;
             },
           ),
           actions: [
             TextButton(
               onPressed: () {
                 setState(() {
-                  categories.add(Category(name: newCategoryName, amount: 0));
+                  plans.add(Planned(name: newPlannedName, amount: 0));
                 });
                 Navigator.pop(context);
               },
@@ -44,7 +44,7 @@ class _CategoriesState extends State<Categories> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Categories',
+          'Planned Payments',
           style: GoogleFonts.alegreyaSans(
             fontSize: 28,
             fontWeight: FontWeight.w800,
@@ -61,7 +61,7 @@ class _CategoriesState extends State<Categories> {
               child: Padding(
                 padding: const EdgeInsets.all(10),
                 child: GestureDetector(
-                  onTap: () => addCategory(context),
+                  onTap: () => addPlanned(context),
                   child: Container(
                     width: 140,
                     decoration: BoxDecoration(
@@ -75,7 +75,7 @@ class _CategoriesState extends State<Categories> {
                         Icon(Icons.add, color: Colors.black),
                         SizedBox(width: 5),
                         Text(
-                          'Add Category',
+                          'Add Payments',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 14,
@@ -88,7 +88,7 @@ class _CategoriesState extends State<Categories> {
               ),
             ),
             Column(
-              children: categories.map((category) {
+              children: plans.map((planned) {
                 return Container(
                   width: double.maxFinite,
                   margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
@@ -100,11 +100,11 @@ class _CategoriesState extends State<Categories> {
                   ),
                   child: Column(
                     children: [
-                      Text(category.name,
+                      Text(planned.name,
                           style: GoogleFonts.alegreyaSans(
                               fontSize: 18, fontWeight: FontWeight.bold)),
                       SizedBox(height: 10),
-                      Text('Amount: ${category.amount}'),
+                      Text('Amount: ${planned.amount}'),
                     ],
                   ),
                 );
@@ -117,9 +117,9 @@ class _CategoriesState extends State<Categories> {
   }
 }
 
-class Category {
+class Planned {
   final String name;
   final int amount;
 
-  Category({required this.name, required this.amount});
+  Planned({required this.name, required this.amount});
 }

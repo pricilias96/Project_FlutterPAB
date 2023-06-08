@@ -121,7 +121,7 @@ class _InvestPageState extends State<InvestPage> {
                       ),
                       SizedBox(width: 27),
                       Text(
-                        "1,121,300.05",
+                        "0",
                         style: GoogleFonts.roboto(
                           color: Colors.black,
                           fontSize: 24,

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_monvest/pages/add-categories.dart';
+import 'package:flutter_monvest/pages/add-expense.dart';
 import 'package:flutter_monvest/pages/add-income.dart';
+import 'package:flutter_monvest/pages/add-planned.dart';
+import 'package:flutter_monvest/pages/add-transfer.dart';
 import 'package:flutter_monvest/pages/forum.dart';
 import 'package:flutter_monvest/pages/home.dart';
 import 'package:flutter_monvest/pages/investment.dart';
@@ -131,62 +134,80 @@ class _AddTransactionState extends State<AddTransaction> {
                       ),
                     ),
                   ),
-                  Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            Container(
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color(0xffcaf7e2),
+                  GestureDetector(
+                    onTap: () {
+                      // Navigasi ke halaman Expense
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Expense()),
+                      );
+                    },
+                    child: Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Color(0xffcaf7e2),
+                                ),
                               ),
-                            ),
-                            SvgPicture.asset('assets/icons/cash-minus.svg',
-                                color: Color(0xff020887)),
-                          ],
-                        ),
-                        SizedBox(height: 1),
-                        Text(
-                          'Withdraw',
-                          style: GoogleFonts.sarala(
-                              fontWeight: FontWeight.w400, fontSize: 12),
-                        )
-                      ],
+                              SvgPicture.asset('assets/icons/cash-minus.svg',
+                                  color: Color(0xff020887)),
+                            ],
+                          ),
+                          SizedBox(height: 1),
+                          Text(
+                            'Withdraw',
+                            style: GoogleFonts.sarala(
+                                fontWeight: FontWeight.w400, fontSize: 12),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                  Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            Container(
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color(0xffcaf7e2),
+                  GestureDetector(
+                    onTap: () {
+                      // Navigasi ke halaman Transfer
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Transfer()),
+                      );
+                    },
+                    child: Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Color(0xffcaf7e2),
+                                ),
                               ),
-                            ),
-                            SvgPicture.asset('assets/icons/cash-sync.svg',
-                                color: Color(0xff020887)),
-                          ],
-                        ),
-                        SizedBox(height: 1),
-                        Text(
-                          'Transfer',
-                          style: GoogleFonts.sarala(
-                              fontWeight: FontWeight.w400, fontSize: 12),
-                        )
-                      ],
+                              SvgPicture.asset('assets/icons/cash-sync.svg',
+                                  color: Color(0xff020887)),
+                            ],
+                          ),
+                          SizedBox(height: 1),
+                          Text(
+                            'Transfer',
+                            style: GoogleFonts.sarala(
+                                fontWeight: FontWeight.w400, fontSize: 12),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   GestureDetector(
@@ -257,34 +278,44 @@ class _AddTransactionState extends State<AddTransaction> {
                       ],
                     ),
                   ),
-                  Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            Container(
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color(0xffcaf7e2),
+                  GestureDetector(
+                    onTap: () {
+                      // Navigasi ke halaman Planned
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PlannedPayments()),
+                      );
+                    },
+                    child: Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Color(0xffcaf7e2),
+                                ),
                               ),
-                            ),
-                            SvgPicture.asset('assets/icons/urgent.svg',
-                                color: Color(0xff020887)),
-                          ],
-                        ),
-                        SizedBox(height: 1),
-                        Text(
-                          'Add Planned\nPayment',
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.sarala(
-                              fontWeight: FontWeight.w400, fontSize: 12),
-                        )
-                      ],
+                              SvgPicture.asset('assets/icons/urgent.svg',
+                                  color: Color(0xff020887)),
+                            ],
+                          ),
+                          SizedBox(height: 1),
+                          Text(
+                            'Add Planned\nPayment',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.sarala(
+                                fontWeight: FontWeight.w400, fontSize: 12),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Container(

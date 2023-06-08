@@ -3,19 +3,20 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
 
-class Income extends StatefulWidget {
-  const Income({Key? key});
+class Transfer extends StatefulWidget {
+  const Transfer({Key? key});
 
   @override
-  State<Income> createState() => _IncomeState();
+  State<Transfer> createState() => _TransferState();
 }
 
-class _IncomeState extends State<Income> {
+class _TransferState extends State<Transfer> {
   TextEditingController _titleController = TextEditingController();
   TextEditingController _amountController = TextEditingController();
   TextEditingController _descriptionController = TextEditingController();
   TextEditingController _createdController = TextEditingController();
-  TextEditingController _accountController = TextEditingController();
+  TextEditingController _fromaccountController = TextEditingController();
+  TextEditingController _toaccountController = TextEditingController();
 
   @override
   void dispose() {
@@ -23,7 +24,8 @@ class _IncomeState extends State<Income> {
     _amountController.dispose();
     _descriptionController.dispose();
     _createdController.dispose();
-    _accountController.dispose();
+    _fromaccountController.dispose();
+    _toaccountController.dispose();
     super.dispose();
   }
 
@@ -56,10 +58,10 @@ class _IncomeState extends State<Income> {
               alignment: Alignment.centerRight,
               child: Row(
                 children: [
-                  Icon(Icons.file_download, size: 15),
+                  Icon(Icons.currency_exchange, size: 15),
                   SizedBox(width: 5),
                   Text(
-                    'Income',
+                    'Transfer',
                     style: GoogleFonts.alegreyaSans(
                         fontSize: 20, fontWeight: FontWeight.w700),
                   ),
@@ -71,13 +73,13 @@ class _IncomeState extends State<Income> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // income title
+            // Transfer title
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: TextField(
                 controller: _titleController,
                 decoration: InputDecoration(
-                  hintText: 'Income Title',
+                  hintText: 'Transfer Title',
                   hintStyle: GoogleFonts.alegreyaSans(
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
@@ -85,36 +87,6 @@ class _IncomeState extends State<Income> {
                 ),
               ),
             ),
-            // add categories
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Container(
-                  width: 140,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 1),
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color(0xFFCAF7E2),
-                  ),
-                  padding: EdgeInsets.all(5),
-                  child: Row(
-                    children: [
-                      Icon(Icons.add, color: Colors.black),
-                      SizedBox(width: 5),
-                      Text(
-                        'Add Category',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 14,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
@@ -217,9 +189,36 @@ class _IncomeState extends State<Income> {
                     ),
                     Expanded(
                       child: TextField(
-                        controller: _accountController,
+                        controller: _fromaccountController,
                         decoration: InputDecoration(
                           hintText: 'From Account',
+                          border: InputBorder.none,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black, width: 1),
+                  borderRadius: BorderRadius.circular(15),
+                  color: Colors.white,
+                ),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Icon(Icons.account_balance, color: Colors.grey),
+                    ),
+                    Expanded(
+                      child: TextField(
+                        controller: _toaccountController,
+                        decoration: InputDecoration(
+                          hintText: 'To Account',
                           border: InputBorder.none,
                         ),
                       ),
@@ -244,12 +243,13 @@ class _IncomeState extends State<Income> {
                         _amountController.clear();
                         _descriptionController.clear();
                         _createdController.clear();
-                        _accountController.clear();
+                        _fromaccountController.clear();
+                        _toaccountController.clear();
 
                         // Tampilkan snackbar notifikasi
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            content: Text('Income added!'),
+                            content: Text('Transfer added!'),
                             duration: Duration(seconds: 2),
                           ),
                         );
@@ -257,7 +257,7 @@ class _IncomeState extends State<Income> {
                       style: ElevatedButton.styleFrom(
                         primary: Color(0xFF58B09C),
                       ),
-                      child: Text('Add Income'),
+                      child: Text('Add Transfer'),
                     ),
                   ),
                 ],
